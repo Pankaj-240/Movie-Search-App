@@ -16,10 +16,7 @@ A simple movie search application built with **HTML, CSS, and JavaScript** using
 
 ## 🌐 Live Demo
 
-https://pankaj-240.github.io/Movie-Search-App/
-
-
-## 📸 Screenshots
+👉 [Click here to try the app](https://pankaj-240.github.io/Movie-Search-App/)  
 
 
 💡 This project is still in progress. More features and styling will be added soon!

@@ -1,40 +1,51 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    height: 100%;
-    width: 100%;
-    background-color: yellow;
+body {
+  height: 100%;
+  width: 100%;
+  background-color: lightblue;
 }
 
-.search_Bar{
-    background-color: pink;
-    height: 50px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.search_Bar {
+  background-color: pink;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 
-    #search_Input{
-        height: 30px;
-        width: 200px;
+  #search_Input {
+    height: 30px;
+    width: 200px;
+  }
+  #search_Btn {
+    height: 30px;
+    width: 60px;
+  }
+}
+
+.movie_Card {
+  height: 550px;
+  width: 100%;
+  border: 2px solid black;
+  .upper_half {
+    height: ;
+  border: 2px solid black;
+    height: 60%;
+    .upper_half_one {
+  border: 2px solid black;
     }
-    #search_Btn{
-        height: 30px;
-        width: 60px;
+    .upper_half_two {
+      height: 40%;
+  border: 2px solid black;
     }
-}
-
-.movie_Card{
-    background-color: blue;
-    height: 550px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+  }
+  .lower_half {
+  border: 2px solid black;
+  }
 }

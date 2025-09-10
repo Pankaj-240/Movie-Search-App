@@ -9,21 +9,22 @@
   <body>
     <div class="search_Bar">
       <input type="text" id="search_Input" />
-      <input type="button" value="Search" id="search_Btn" />
+    <input type="button" value="Search" id="search_Btn" >
     </div>
     <div class="movie_Card">
       <div class="upper_half">
-        <div class="upper_half_one"><img src="" alt="Movie poster" /></div>
+        <div class="upper_half_one"><img src="" alt="Movie poster" id="poster"></div>
         <div class="upper_half_two">
-          <h3>Movie Title (Year)</h3>
-          <p>Rating:</p>
-          <p>Genre</p>
-          <p>Actors</p>
+          <h3 id="title">Movie Title (Year)</h3>
+          <p id="rating">Rating:</p>
+          <p id="genre">Genre</p>
+          <p id="actors">Actors</p>
         </div>
       </div>
       <div class="lower_half">
-        <p>Discription</p>
-        <button class="fav_btn">add to favorites</button>
+        <p id="plot">
+        </p>
+        <button class="fav_btn">add</button>
       </div>
     </div>
     <script src="script.js"></script>

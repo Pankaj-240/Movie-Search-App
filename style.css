@@ -32,20 +32,33 @@ body {
 .movie_Card {
   height: 550px;
   width: 100%;
-  border: 2px solid black;
   .upper_half {
-    height: ;
-  border: 2px solid black;
-    height: 60%;
+    display: flex;
+
+    height: 400px;
+    gap: 5px;
     .upper_half_one {
-  border: 2px solid black;
+      display: flex;
+      height: 400px;
+      width: 268px;
     }
     .upper_half_two {
-      height: 40%;
-  border: 2px solid black;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      flex: 1;
     }
   }
   .lower_half {
-  border: 2px solid black;
+    border: 2px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .fav_btn {
+      height: 20px;
+      width: 40px;
+    }
   }
 }

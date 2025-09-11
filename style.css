@@ -7,11 +7,10 @@
 body {
   height: 100%;
   width: 100%;
-  background-color: lightblue;
 }
 
 .search_Bar {
-  background-color: pink;
+
   height: 50px;
   width: 100%;
   display: flex;
@@ -20,10 +19,13 @@ body {
   gap: 10px;
 
   #search_Input {
+    border-radius: 8px;
     height: 30px;
     width: 200px;
+    padding-left: 5px;
   }
   #search_Btn {
+    border-radius: 8px;
     height: 30px;
     width: 60px;
   }
@@ -34,29 +36,59 @@ body {
   width: 100%;
   .upper_half {
     display: flex;
-
     height: 400px;
-    gap: 5px;
+    gap: 10px;
     .upper_half_one {
+      border-radius: 18px;
       display: flex;
       height: 400px;
       width: 268px;
+      overflow: hidden;
+      #poster{
+      object-fit:fill;
+    }
     }
     .upper_half_two {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       flex: 1;
+      #title{
+        text-align: center;
+        font-size:xx-large;
+      }
+      .rating_genre{
+        display: flex;
+        justify-content:space-evenly;
+        align-items: normal;
+        flex-wrap: nowrap;
+      }
+      #rating{
+        flex: 1;
+        font-size:large;
+      }
+      #genre{
+        font-size:large;
+        flex:1;
+      }
+      #actors{
+        font-size:large;
+        
+      }
+      #plot{
+        font-size:large;
+
+      }
     }
   }
   .lower_half {
-    border: 2px solid black;
     padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 
     .fav_btn {
+      display: none;
       height: 20px;
       width: 40px;
     }

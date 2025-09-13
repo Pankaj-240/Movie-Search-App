@@ -24,6 +24,8 @@ async function getData(url) {
     let req = await fetch(url);
     let data = await req.json();
 
+    console.log(data)
+
     title.innerText = data.Title + `(${data.Year})`;
 
     rating.innerHTML = "<b>Rating :</b> " + data.imdbRating;

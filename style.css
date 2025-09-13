@@ -4,9 +4,20 @@
   box-sizing: border-box;
 }
 
+:root{
+  --main-color: pink;
+  --input-color: blue;
+  --search-color: yellow;
+  --body-tx-color: white;
+}
+
 body {
   height: 100%;
   width: 100%;
+  background-color: var(--main-color);
+  background-image:url(dark.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
 }
 
 .search_Bar {
@@ -19,15 +30,19 @@ body {
   gap: 10px;
 
   #search_Input {
+    background-color: var(--input-color);
     border-radius: 8px;
-    height: 30px;
-    width: 200px;
+    height: 35px;
+    width: 250px;
     padding-left: 5px;
+    font-size: medium;
   }
   #search_Btn {
+    background-color: var(--search-color);
     border-radius: 8px;
-    height: 30px;
-    width: 60px;
+    height: 35px;
+    width: 70px;
+    font-size: medium;
   }
 }
 

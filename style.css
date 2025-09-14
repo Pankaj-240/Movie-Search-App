@@ -2,22 +2,36 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #EEEEEE;
 }
 
 :root{
-  --main-color: pink;
-  --input-color: blue;
-  --search-color: yellow;
-  --body-tx-color: white;
+  --input-color:#D3DAD9;
+  --search-color: #344C64;
+  --bg-image: url(bg\ image.jpg);
 }
 
 body {
   height: 100%;
   width: 100%;
-  background-color: var(--main-color);
-  background-image:url(dark.jpg);
-  background-repeat: no-repeat;
-  background-size:cover;
+}
+
+.second{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.backgound{
+  height: 110vh;
+  width: 110vw;
+  position: fixed;
+  background: var(--bg-image);
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
 }
 
 .search_Bar {
@@ -36,6 +50,7 @@ body {
     width: 250px;
     padding-left: 5px;
     font-size: medium;
+    color: #344C64;
   }
   #search_Btn {
     background-color: var(--search-color);
@@ -47,14 +62,16 @@ body {
 }
 
 .movie_Card {
-  height: 550px;
-  width: 100%;
+  height: 400px;
+  width: 900px;
+  background-color:rgba(0 ,0,0, .6);
+  border-radius: 20px;
   .upper_half {
     display: flex;
     height: 400px;
     gap: 10px;
     .upper_half_one {
-      border-radius: 18px;
+      border-radius: 18px 0px 0px 18px;
       display: flex;
       height: 400px;
       width: 268px;

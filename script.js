@@ -1,4 +1,3 @@
-// const key = 1;
 
 const title = document.querySelector("#title");
 const rating = document.querySelector("#rating");

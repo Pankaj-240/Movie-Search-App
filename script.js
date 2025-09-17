@@ -8,6 +8,9 @@ const poster = document.querySelector("#poster");
 const search_Btn = document.querySelector("#search_Btn");
 const search_Input = document.querySelector("#search_Input");
 const fav_btn = document.querySelector("#fav_btn");
+const movie_Card = document.querySelector(".movie_Card");
+
+movie_Card.style.display="none"
 
 search_Btn.addEventListener("click", () => {
   let movie_name = search_Input.value;
@@ -27,7 +30,7 @@ async function getData(url) {
 
     title.innerText = data.Title + `(${data.Year})`;
 
-    rating.innerHTML = "<b>Rating :</b> " + data.imdbRating;
+    rating.innerHTML = "<b>imdb Rating :</b> " + data.imdbRating;
 
     genre.innerHTML = "<b>Genre :</b> " + data.Genre;
 
@@ -36,7 +39,11 @@ async function getData(url) {
     plot.innerHTML = "<b>Plot : </b>" + data.Plot;
 
     poster.setAttribute("src", data.Poster);
+    
     console.log(data.Poster);
+
+    movie_Card.style.display="inline-block";
+
   } catch (err) {
     console.log(err);
   }

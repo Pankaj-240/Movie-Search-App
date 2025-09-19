@@ -15,12 +15,9 @@
 body,html{
   height: 100%;
   width: 100%;
-}
-.second{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 80px;
+  margin: 0; 
+  padding: 0;
+  overflow: hidden;
 }
 
 .backgound{
@@ -31,13 +28,21 @@ body,html{
   z-index: -1;
   background-size: cover;
   background-position: center;
-  filter: blur(4px);
 }
+
+.second{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
 
 .search_Bar {
 
   height: 50px;
   width: 100%;
+  margin-top: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,8 +69,9 @@ body,html{
 .movie_Card {
   height: 400px;
   width: 900px;
-  background-color:rgba(0 ,0,0, .7);
+  background-color:rgba(0 ,0,0, .6);
   border-radius: 20px;
+  backdrop-filter: blur(4px);
   .upper_half {
     display: flex;
     height: 400px;
@@ -120,9 +126,19 @@ body,html{
     gap: 10px;
 
     .fav_btn {
-      display: none;
       height: 20px;
-      width: 40px;
+      width: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      border: none;
+      svg{
+        fill:whitesmoke;
+      }
     }
   }
 }

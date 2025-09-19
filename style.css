@@ -134,11 +134,28 @@ body,html{
       background-color: transparent;
       position: fixed;
       top: 10px;
-      right: 10px;
+      right: 14px;
       border: none;
       svg{
         fill:whitesmoke;
       }
     }
+  }
+}
+
+.fav_list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height:38px;
+  width: 38px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  svg{
+    height: 38px;
+    width: 38px;
+    fill: #344C64;
   }
 }

@@ -8,8 +8,15 @@ const search_Btn = document.querySelector("#search_Btn");
 const search_Input = document.querySelector("#search_Input");
 const fav_btn = document.querySelector(".fav_btn");
 const movie_Card = document.querySelector(".movie_Card");
+const heart = document.querySelector("#heart");
 
 movie_Card.style.display = "none";
+
+if (!localStorage.getItem("movies_list")) {
+  localStorage.setItem("movies_list", JSON.stringify([]));
+}
+
+let currentMovie = null;
 
 search_Btn.addEventListener("click", () => {
   let movie_name = search_Input.value;
@@ -25,8 +32,6 @@ async function getData(url) {
     let req = await fetch(url);
     let data = await req.json();
 
-    console.log(data);
-
     title.innerText = data.Title + `(${data.Year})`;
 
     rating.innerHTML = "<b>imdb Rating :</b> " + data.imdbRating;
@@ -39,11 +44,35 @@ async function getData(url) {
 
     poster.setAttribute("src", data.Poster);
 
-    fav_btn.addEventListener("click", () => {
-    
-    });
+    currentMovie = data.Title;
+    check_fav();
     movie_Card.style.display = "inline-block";
   } catch (err) {
     console.log(err);
   }
+}
+
+fav_btn.addEventListener("click", () => {
+  push_fav_movie(currentMovie);
+});
+
+function push_fav_movie(movie_name) {
+  let arr = JSON.parse(localStorage.getItem("movies_list")) || [];
+  if (!arr.includes(movie_name)) {
+    arr.push(movie_name);
+    localStorage.setItem("movies_list", JSON.stringify(arr));
+  } else {
+    console.log(movie_name + " is already in favorites!");
+  }
+  check_fav();
+}
+
+function check_fav(){
+     let arr = JSON.parse(localStorage.getItem("movies_list"));
+    if(arr.includes(currentMovie)){
+      heart.style.fill="red";
+    }
+    else{
+      heart.style.fill="whitesmoke";
+    }
 }

@@ -138,6 +138,7 @@ body,html{
       border: none;
       svg{
         fill:whitesmoke;
+        
       }
     }
   }
@@ -159,3 +160,4 @@ body,html{
     fill: #344C64;
   }
 }
+

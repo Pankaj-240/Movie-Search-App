@@ -17,6 +17,7 @@ if (!localStorage.getItem("movies_list")) {
 }
 
 let currentMovie = null;
+let heart_btn = null;
 
 search_Btn.addEventListener("click", () => {
   let movie_name = search_Input.value;
@@ -68,11 +69,15 @@ function push_fav_movie(movie_name) {
 }
 
 function check_fav(){
-     let arr = JSON.parse(localStorage.getItem("movies_list"));
-    if(arr.includes(currentMovie)){
+    let arr = JSON.parse(localStorage.getItem("movies_list"));
+    if(arr.includes(currentMovie) && !heart_btn){
       heart.style.fill="red";
+      heart_btn=true;
     }
     else{
       heart.style.fill="whitesmoke";
+      arr = arr.filter(item => item !== currentMovie);
+      localStorage.setItem("movies_list",JSON.stringify(arr));
+      heart_btn=null;
     }
 }

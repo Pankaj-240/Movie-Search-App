@@ -9,8 +9,12 @@ const search_Input = document.querySelector("#search_Input");
 const fav_btn = document.querySelector(".fav_btn");
 const movie_Card = document.querySelector(".movie_Card");
 const heart = document.querySelector("#heart");
+const fav_movies = document.querySelector(".fav_movies");
+const fav_list = document.querySelector(".fav_list");
 
+fav_movies.parentElement.style.display="none";
 movie_Card.style.display = "none";
+let fav_movei_box=null;
 
 if (!localStorage.getItem("movies_list")) {
   localStorage.setItem("movies_list", JSON.stringify([]));
@@ -81,3 +85,23 @@ function check_fav(){
       heart_btn=null;
     }
 }
+
+fav_list.addEventListener("click",()=>{
+movie_Card.style.display = "none";
+fav_movies.parentElement.style.display="flex";
+let arr = JSON.parse(localStorage.getItem("movies_list"));
+console.log(arr);
+if(!fav_movei_box){
+  for(let i=0; i<arr.length;i++){
+  fav_movies.childNodes[3].appendChild(document.createElement('li'));
+  fav_movies.childNodes[3].children[i].innerHTML=`<b>${i+1}) ${arr[i]}</b>`;
+  }
+  fav_movei_box=1;
+}
+else{
+  fav_movies.parentElement.style.display="none";
+  fav_movei_box=null;
+  document.getElementById("myList").replaceChildren();
+  console.dir(fav_movies.childNodes[3].children);
+}
+});

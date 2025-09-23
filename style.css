@@ -8,7 +8,7 @@
 
 :root{
   --input-color:#D3DAD9;
-  --search-color: #344C64;
+  --primary-color: rgba(52, 76, 100, .9);;
   --bg-image: url(bg\ image.jpg);
 }
 
@@ -58,7 +58,7 @@ body,html{
     color: #344C64;
   }
   #search_Btn {
-    background-color: var(--search-color);
+    background-color: var(--primary-color);
     border-radius: 8px;
     height: 35px;
     width: 70px;
@@ -157,7 +157,31 @@ body,html{
   svg{
     height: 38px;
     width: 38px;
-    fill: #344C64;
+    fill: var(--primary-color);
   }
+}
+
+
+.fav_moivies_div{
+  display: flex;
+  justify-content: center;
+  .fav_movies{
+  border-radius: 30px;
+  height:300px;
+  width: 400px;
+  border: solid black 2px;
+  overflow: hidden;
+  h3{
+    text-align: center;
+    background-color: rgba(0 ,0,0, .6);
+  }
+  ul{
+    background-color: var(--primary-color);
+    height: 100%;
+    li{
+      padding: 18px;
+    }
+  }
+}
 }
 

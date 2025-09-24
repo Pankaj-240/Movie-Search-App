@@ -14,7 +14,7 @@ const fav_list = document.querySelector(".fav_list");
 
 fav_movies.parentElement.style.display="none";
 movie_Card.style.display = "none";
-let fav_movei_box=null;
+
 
 if (!localStorage.getItem("movies_list")) {
   localStorage.setItem("movies_list", JSON.stringify([]));
@@ -22,14 +22,17 @@ if (!localStorage.getItem("movies_list")) {
 
 let currentMovie = null;
 let heart_btn = null;
+let no =0;
 
 search_Btn.addEventListener("click", () => {
+  no++;
   let movie_name = search_Input.value;
   if (movie_name == "") {
     alert("Enter a Movie name");
   } else {
     const url = `https://www.omdbapi.com/?t=${movie_name}&apikey=7f47f75b`;
-    getData(url);
+    getData(url)
+    fav_movies.parentElement.style.display="none";
   }
 });
 async function getData(url) {
@@ -50,7 +53,15 @@ async function getData(url) {
     poster.setAttribute("src", data.Poster);
 
     currentMovie = data.Title;
-    check_fav();
+
+    let arr = JSON.parse(localStorage.getItem("movies_list"));
+    if(arr.includes(currentMovie)){
+      heart.style.fill="red";
+    }
+    else{
+      heart.style.fill="whitesmoke";
+    }
+
     movie_Card.style.display = "inline-block";
   } catch (err) {
     console.log(err);
@@ -86,22 +97,20 @@ function check_fav(){
     }
 }
 
+
 fav_list.addEventListener("click",()=>{
+
+document.getElementById("myList").replaceChildren();
 movie_Card.style.display = "none";
 fav_movies.parentElement.style.display="flex";
 let arr = JSON.parse(localStorage.getItem("movies_list"));
-console.log(arr);
-if(!fav_movei_box){
-  for(let i=0; i<arr.length;i++){
+
+for(let i=0; i<arr.length;i++){
   fav_movies.childNodes[3].appendChild(document.createElement('li'));
   fav_movies.childNodes[3].children[i].innerHTML=`<b>${i+1}) ${arr[i]}</b>`;
   }
-  fav_movei_box=1;
-}
-else{
+no++;
+if(no%2==0){
   fav_movies.parentElement.style.display="none";
-  fav_movei_box=null;
-  document.getElementById("myList").replaceChildren();
-  console.dir(fav_movies.childNodes[3].children);
 }
 });

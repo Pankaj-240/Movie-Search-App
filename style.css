@@ -74,7 +74,6 @@ body,html{
   backdrop-filter: blur(4px);
   .upper_half {
     display: flex;
-    height: 400px;
     gap: 10px;
     .upper_half_one {
       border-radius: 18px 0px 0px 18px;
@@ -87,7 +86,9 @@ body,html{
     }
     }
     .upper_half_two {
+      height: 250px;
       display: flex;
+      width: 200px;
       flex-direction: column;
       justify-content: space-around;
       flex: 1;
@@ -113,10 +114,6 @@ body,html{
         font-size:large;
         
       }
-      #plot{
-        font-size:large;
-
-      }
     }
   }
   .lower_half {
@@ -125,6 +122,15 @@ body,html{
     flex-direction: column;
     gap: 10px;
 
+    #plot{
+        font-size:large;
+        position:absolute;
+        bottom:10px;
+        left: 278px;
+        height: 140px;
+        width: 621px;
+        padding:10px 10px 0px 0px;
+      }
     .fav_btn {
       height: 20px;
       width: 20px;
@@ -185,3 +191,99 @@ body,html{
 }
 }
 
+@media(max-width:500px){
+.search_Bar {
+  height: 50px;
+  width: 100%;
+  margin-top: 15px;
+  display: bl;
+  justify-content: center;
+  align-items:baseline;
+  gap: 8px;
+
+  #search_Input {
+    border-radius: 12px;
+    height: 35px;
+    width: 180px;
+    padding-left: 5px;
+  }
+  #search_Btn {
+    border-radius: 12px;
+    height: 35px;
+    width: 70px;
+    font-size: small;
+  }
+}
+
+.movie_Card {
+  width: 450px;
+  background-color:rgba(0 ,0,0, .75);
+  border-radius: 20px;
+  .upper_half {
+    height: 240px;
+    width: 100%;
+    gap: 0;
+    .upper_half_one {
+      border-radius: 18px 0px 0px 0px;
+      height: 240px;
+      width: 150px;
+      #poster{
+      object-fit:fill;
+      width:100%;
+      height: 100%;
+    }
+    }
+    .upper_half_two {
+      height: 240px;
+      display: flex;
+      flex-direction: column;
+      padding-left: 8px;
+      #title{
+        width: 260px;
+        font-size: x-large;
+      }
+      .rating_genre{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+      }
+      #rating{
+        font-size:medium;
+      }
+      #genre{       
+        font-size:medium;
+      }
+      #actors{
+
+        font-size:medium;
+      }
+    }
+  }
+  .lower_half {
+
+    #plot{
+
+      height: 140px;
+      padding: 10px;
+      width: 440px;
+      font-size: medium;
+      position:relative;
+      bottom:10px;
+      top: 5px;
+      left: 0px;
+      padding:0px;
+    }
+  }
+}
+.fav_list{
+  height:30px;
+  width: 30px;
+  top: 15px;
+  right: 10px;
+  svg{
+    height: 30px;
+    width: 30px;
+  }
+}
+}
